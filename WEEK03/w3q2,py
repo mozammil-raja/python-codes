@@ -1,0 +1,7 @@
+
+sum = 0
+for i in range(1, 6):
+    num = int(input("Enter Number {} and {}: ".format(i, "a")))
+    sum += num
+
+print(f"avg = {sum/5}")
