@@ -1,0 +1,46 @@
+def isConsecutive(ls):
+    r = 0
+    while r < len(ls):
+        i = r
+        # Find consecutive numbers
+        while i + 1 < len(ls) and ls[i + 1] - ls[i] == 1:
+            i += 1
+
+        # Print the consecutive sequence if it has more than one element
+        if i > r:
+            for j in range(r, i + 1):
+                print(ls[j], end=", " if j < i else "\n")
+
+        # Move to the next element after the sequence
+        r = i + 1
+
+
+# Input list
+lst = list(map(int, input("Enter numbers: ").split()))
+lst.sort()
+print(f"Sorted list: {lst}")
+isConsecutive(lst)
+
+
+
+
+def fibonacci(n):
+    # Base cases
+    if n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    # Recursive case
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+def fibonacci_series(n):
+    if n <= 0:
+        print("Invalid input. Please enter a positive integer.")
+        return
+    print("Fibonacci Series:", end=" ")
+    for i in range(1, n + 1):
+        print(fibonacci(i), end=", " if i < n else "\n")
+
+# Ask the user for input
+n = int(input("Enter the number of Fibonacci terms to generate: "))
+fibonacci_series(n)
